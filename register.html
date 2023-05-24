@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./progetto.css">
+</head>
+<body>
+  
+  
+  
+  <div class="container-fluid vh-100 gb-register">
+    <div class="row h-100">
+      <div class="col-12 h-100 d-flex justify-content-center align-items-center">
+        <div class="container larg">
+          <div class="row mb-5">
+            <div class="col-12 text-center">
+              <p class="tx-acc display-3 f-p">Crea il tuo Account</p>
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="text-white f-p">Clicca qui per diventare admin della piattaforma</a>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center align-items-center mb-5  ">
+            <div class="col-12">
+              <form>
+                <div class="mb-3">
+                  <label for="Username" class="form-label f-s tx-thi lead fw-bold">Username</label>
+                  <input type="text" class="form-control" id="Username">
+                  <div id="UsernameMessage" class="form-text f-s fst-italic"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="Email" class="form-label f-s tx-thi lead fw-bold">Email address</label>
+                  <input type="email" class="form-control" id="Email">
+                  <div id="EmailMessage" class="form-text f-s fst-italic"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="Password" class="form-label f-s tx-thi lead fw-bold">Password</label>
+                  <input type="password" class="form-control" id="Password">
+                  <div id="PasswordMessage" class="form-text f-s fst-italic"></div>
+                </div>
+               
+                <button id="signUp" type="button" class="btn-auto mx-auto fw-bold ">Sign up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  
+  <script>    
+    // catturo il nodo input dal dom 
+    const Username = document.querySelector('#Username');
+    const UsernameMessage = document.querySelector('#UsernameMessage');
+    const Email = document.querySelector('#Email');
+    const EmailMessage = document.querySelector('#EmailMessage');
+    const Password = document.querySelector('#Password');
+    const PasswordMessage = document.querySelector('#PasswordMessage');
+    
+    
+    const signUp = document.querySelector('#signUp');
+    
+    
+    let rules = 0;
+    
+    // intercetto l'evento che ritorna il valore inserito dall'utente nel campo di input 
+    Username.addEventListener('change', () => {
+      // se checkUsernameValidation ritorna vero
+      if (checkUsernameValidation(Username.value)) {
+        // stampa un feedback positivo nel messaggio 
+        Username.classList.add('is-valid')
+        Username.classList.remove('is-invalid')
+        UsernameMessage.textContent = "Username Valido"
+        UsernameMessage.classList.add('text-success')
+        UsernameMessage.classList.remove('text-danger')
+        progressValidation() 
+      } else {
+        // stampa un feedback negativo nel messaggio
+        Username.classList.add('is-invalid')
+        Username.classList.remove('is-valid')
+        UsernameMessage.textContent = "Username non valido"
+        UsernameMessage.classList.add('text-danger')
+        UsernameMessage.classList.remove('text-success')
+        progressValidation() 
+      } 
+    })
+    
+    // intercetto l'evento che ritorna il valore inserito dall'utente nel campo di input 
+    Email.addEventListener('change', () => {
+      // se checkEmailValidation ritorna vero
+      if (checkEmailValidation(Email.value)) {
+        // stampa un feedback positivo nel messaggio 
+        Email.classList.add('is-valid')
+        Email.classList.remove('is-invalid')
+        EmailMessage.textContent = "Email Valida"
+        EmailMessage.classList.add('text-success')
+        EmailMessage.classList.remove('text-danger')
+        progressValidation() 
+        
+      } else {
+        // stampa un feedback negativo nel messaggio
+        Email.classList.add('is-invalid')
+        Email.classList.remove('is-valid')
+        EmailMessage.textContent = "Email non valida"
+        EmailMessage.classList.add('text-danger')
+        EmailMessage.classList.remove('text-success')
+        progressValidation() 
+      } 
+    })
+    
+    // intercetto l'evento che ritorna il valore inserito dall'utente nel campo di input 
+    Password.addEventListener('change', () => {
+      // se checkPasswordValidation ritorna vero
+      if (checkPasswordValidation(Password.value)) {
+        // stampa un feedback positivo nel messaggio 
+        Password.classList.add('is-valid')
+        Password.classList.remove('is-invalid')
+        PasswordMessage.textContent = "Password Valida"
+        PasswordMessage.classList.add('text-success')
+        PasswordMessage.classList.remove('text-danger')
+        progressValidation() 
+        
+      } else {
+        // stampa un feedback negativo nel messaggio
+        Password.classList.add('is-invalid')
+        Password.classList.remove('is-valid')
+        PasswordMessage.textContent = "Password non valida"
+        PasswordMessage.classList.add('text-danger')
+        Password.classList.remove('text-success')
+        progressValidation() 
+      } 
+    })
+    
+    
+    
+    
+    // definisco una funzione che controlli se vengono rispettate delle regole 
+    function checkUsernameValidation(string) {
+      const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+      if (string.length >= 4 && !string.match(specialChars)) {
+        let recheck = 0;
+        if (recheck < 1) {
+          rules += 1
+          recheck += 1
+        }
+        return true;
+      } else {
+        rules -= 1
+        return false;
+      }
+    }
+    
+    function checkEmailValidation(string) {
+      const specialChar = /[@]/;
+      if (string.match(specialChar)) {
+        rules += 1
+        return true;
+      } else {
+        rules -= 1
+        return false;
+      }
+    }
+    
+    function checkPasswordValidation(string) {
+      const regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(.{4,15})$/;
+      if (string.match(new RegExp(regex, "gi"))) {
+        rules += 1
+        return true;
+      } else {
+        rules -= 1
+        return false;
+      }
+    }
+    
+    
+    
+    
+  </script>
+  
+  
+  
+</body>
+</html>

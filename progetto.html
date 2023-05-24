@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notflix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@300;400;500&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./progetto.css">
+</head>
+<body>
+  
+  
+  <nav id="nav" class="navbar navbar-expand-md navbar-dark bg-trasparent fixed-top" aria-label="Fourth navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand d-block d-md-none" href="#">
+        <img src="./media/logo.png" width="100" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          
+          <li class="nav-item">
+            <a class="nav-link f-s text-white" href="./Annuncio.html">Aggiungi Blu Ray</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link f-s text-white" href="#">Contattaci</a>
+          </li>
+          
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn f-s dropdown-toggle text-white rounded-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Multilingua
+              </button>
+              <ul class="dropdown-menu f-s rounded-0">
+                <li><button class="dropdown-item" type="button">EN 🇬🇧</button></li>
+                <li><button class="dropdown-item" type="button">ES 🇪🇸</button></li>
+                <li><button class="dropdown-item" type="button">IT 🇮🇹</button></li>
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+        <a class="navbar-brand me-auto d-none d-md-block" href="#">
+          <img src="./media/logo.png" width="120" alt="">
+        </a>
+        <form role="search mx-3">
+          <input class="form-control rounded-0 search-input-nav border-0 text-white f-s" type="search" placeholder="Cerca " aria-label="Search">
+        </form>
+        <button class="btn text-white f-s mx-3">
+          <i class="bi bi-person-add"></i>
+          <a class="text-decoration-none text-white" href="./Register.html">Register</a>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Benvenuti -->
+  
+  <header class="vh-100">
+    <div class="container h-100 my-5 py-5">
+      <div class="row h-100 align-items-center justify-content-between">
+        <div class="col-12 col-md-4">
+          <h1 class="text-white f-p display-3 mb-3">Benvenuti nel nostro sito di vendita blu ray</h1>
+          <p class="f-s tx-acc lead mb-4">Siamo entusiasti di offrire ai nostri clienti l'opportunità di godere delle loro serie preferite in alta definizione, con immagini nitide e audio cristallino.
+            Il nostro catalogo include una vasta selezione di serie TV di successo, da quelle storiche alle ultime uscite, comprese le serie televisive più premiate e amate di tutti i tempi. </p>
+            <button class="btn-auto fw-bold">  
+              <a href="./annunci.html" class="text-decoration-none text-white">Visitali tutti</a>
+            </button>
+          
+          </div>
+          <div class="col-12 col-md-6 d-none d-md-block">
+            <img src="./media/main.png" width="700" class="d-block mx-auto rounded-5 bordo " alt="">
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    
+    <!-- Scopri i numeri -->
+    <section> 
+      <div class="container my-5 py-5 ">
+        <div class="row mb-5 ">
+          <div class="col-12 text-center  ">
+            <p class="h1 f-p text-white ">Ecco perche vendere e comprare da noi...</p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-12 col-md-3 ">
+            <div class="card bg-transparent text-center border-0 ">
+              <i class="bi bi-people fs-1 tx-acc"></i>
+              <p class="text-white f-p lead">Utenti soddisfatti</p>
+              <p id="users" class="text-white f-s display-3">0</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="card bg-transparent text-center border-0 ">
+              <i class="bi bi-stickies fs-1 tx-acc"></i>
+              <p class="text-white f-p lead">Annunci pubblicati</p>
+              <p id="ads" class="text-white f-s display-3">0</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="card bg-transparent text-center border-0 ">
+              <i class="bi bi-star fs-1 tx-acc"></i>
+              <p class="text-white f-p lead">Recensioni Positive</p>
+              <p id="delivery" class="text-white f-s display-3">0</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="card bg-transparent text-center border-0 ">
+              <i class="bi bi-disc fs-1 tx-acc"></i>
+              <p class="text-white f-p lead">Blu Ray venduti oggi</p>
+              <p id="AutoVenduteOggi" class="text-white f-s display-3">0</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Mission -->
+    <section>
+      <div class="container-fluid bg-section-info">
+        <div class="container h-100 my-5 py-5">
+          <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-md-7 text-center">
+              <p class="f-p display-3 text-white tx-sec">La nostra missione</p>
+              <p class="f-s lead text-white fw-bold">Offrire ai clienti la più ampia selezione di Blu Ray di alta qualità a prezzi competitivi, garantendo un'esperienza di acquisto facile e sicura.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section>
+      <div class="container my-5 py-5">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <span class="f-p text-white display-5">Ultimi</span>
+            <span class="f-p tx-acc display-5">Annunci</span>
+          </div>
+        </div>
+        <div id="upcomingBooksWrapper" class="row mb-5">
+          <!-- <div class="col-12 col-md-6 mb-4">
+            
+            qui va upcomingBooksWrapper che si trova in script
+            
+          </div> -->
+          
+          
+        </div>
+      </div>
+    </section>        
+    
+    
+    <!-- section testimonials subscribers -->
+    <section>
+      <div class="container my-5 py-5">
+        <div class="row mb-5"> 
+          <div class="col-12 text-center">
+            <p class="f-p tx-thi display-4">Recensioni degli utenti</p>
+            <p class="f-p text-white lead">Leggi cosa ti consigliano i nostri appassionati di serie!</p>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-12">
+            <!-- Swiper -->
+            <div class="swiper mySwiper my-5 py-3">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Ho acquistato alcuni Blu Ray da questo sito e sono rimasto molto soddisfatto. La spedizione è stata veloce e i prodotti erano ben confezionati. Inoltre, il prezzo era molto competitivo rispetto ad altri siti</p>
+                        <div class="avatar1 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Purtroppo ho ricevuto un prodotto danneggiato e ho trovato il processo di restituzione molto complicato e frustrante</p>
+                        <div class="avatar2 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Il catalogo di Blu Ray disponibile su questo sito è incredibile! Ho trovato molti titoli difficili da trovare altrove e la qualità dei prodotti è eccellente</p>
+                        <div class="avatar3 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Ho avuto problemi con la spedizione e il mio ordine è stato consegnato con notevole ritardo rispetto a quanto promesso</p>
+                        <div class="avatar4 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Ho trovato i prezzi su questo sito molto convenienti rispetto ad altri siti simili. Inoltre, il processo di acquisto è stato facile e veloce.</p>
+                        <div class="avatar5 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card bg-transparent">
+                    <div class="container">
+                      <div class="row">
+                        <p class="small text-white f-s">Il mio ordine ha subito un ritardo di consegna di diverse settimane, Quando ho finalmente ricevuto i Blu-ray, sono rimasto scioccato dalla loro qualità. I dischi erano graffiati e pieni di impronte digitali.</p>
+                        <div class="avatar6 mx-auto my-3"></div>
+                        <div>
+                          <i class="bi bi-facebook text-white mx-2"></i>
+                          <i class="bi bi-whatsapp text-white mx-2"></i>
+                          <i class="bi bi-instagram text-white mx-2"></i>
+                          <i class="bi bi-twitter text-white mx-2"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- Swiper -->
+          </div>
+        </div>
+      </div> 
+    </section>
+    
+    <section>
+      <div class="container-fluid bg-section-banner">
+        <div class="container h-100 my-5 py-5">
+          <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 col-md-7 text-center">
+              <p class="f-p display-3 text-white tx-sec">Registrati subito su <span class="tx-acc">Notflix</span></p>
+              <p class=" textnonslegg f-s lead text-white fw-bold">Registrarsi ti permette di accedere a una serie di vantaggi esclusivi. Prima di tutto, avrai accesso a sconti e promozioni riservati solo agli utenti registrati.</p>
+              <div class="d-flex justify-content-center mt-5">
+                <button class="btn-register me-5">login</button>
+                <button class="btn-contact">info </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer>
+      <div class="container py-5 my-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4 text-center">
+            <img src="./media/Logo.png" width="100" alt="" class="mx-auto">
+            <p class="f-p h1 text-white">Notflix</p>
+            <p class="copyright f-s lead tx-acc"></p>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <p class="text-white f-s">tutti i dati di questo sito sono stati letteralmente rubati qua e la spero di non essere denunciato ciao e grazie.</p>
+          </div>
+          <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+            <ul class="f-s text-white">
+              <li>
+                <a href="" class="text-decoration-none tx-acc">contatta il team di sviluppo</a>
+              </li>
+              <li>
+                <a href="" class="text-decoration-none tx-acc">scopri come aggiungere un annuncio</a>
+              </li>
+              <li>
+                <a href="" class="text-decoration-none tx-acc">richiedi infomazioni</a>
+              </li>
+              <li>
+                <a href="" class="text-decoration-none tx-acc">richiedi come essere admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+      
+      const nav = document.querySelector('#nav')
+      
+      document.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          nav.classList.add('bg-sec')
+          nav.style.transition = ".2s"
+        } else {
+          nav.classList.remove('bg-sec')
+        }
+      })
+      
+      
+      const users = document.querySelector('#users');
+      const ads = document.querySelector('#ads');
+      const delivery = document.querySelector('#delivery');
+      const AutoVenduteOggi = document.querySelector('#AutoVenduteOggi');
+      
+      
+      // funzione che esegue un conteggio 
+      
+      let start = true;
+      function createInterval(number, element, delay) {
+        
+        let counter = 0;
+        
+        if (start) {
+          
+          let interval = setInterval(() => {
+            if (counter < number) {
+              counter++
+              element.innerHTML = counter
+            } else {
+              clearInterval(interval)
+            }
+          }, delay);
+        }
+      }
+      
+      
+      // Intersection Observer,  scattare una funzione nel momento in cui un nodo del dom é visibile ed entra nel viewport height del browser
+      
+      let observer = new IntersectionObserver( (entries) => {
+        entries.forEach( entry => {
+          if (entry.isIntersecting) {
+            createInterval(100, users, 50)
+            createInterval(200, ads, 20)
+            createInterval(80, delivery, 70)
+            createInterval(50, AutoVenduteOggi, 120)
+            start = false
+          }
+        });
+      } , {
+        threshold: [1]
+      })
+      
+      observer.observe(users)
+      
+      
+      fetch('./progetto.json')
+      .then(response => response.json())
+      .then(json => {
+        
+        
+        let collection = json
+        
+        function randomDate(start, end) {
+          return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        }
+        
+        collection.forEach((comic) => {
+          comic.type = randomDate(new Date(2023, 0, 1), new Date())
+          
+          
+          
+        })
+        
+        
+        let sortingByDateComics = collection.sort((a, b) => b.type - a.type).slice(0,4)
+        console.log(sortingByDateComics)
+        
+        
+        
+        
+        
+        
+        
+        const upcomingBooksWrapper = document.querySelector('#upcomingBooksWrapper');
+        sortingByDateComics.forEach((series) => {
+          let div = document.createElement('div')
+          div.classList.add('col-12', 'col-md-6' ,'mb-4')
+          div.innerHTML = `
+          <div class="card bg-card-annunci p-2 h-100">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-5">
+                  <img class="img-fluid rounded-3 " src="${(series.image.medium)}">
+                </div>
+                <div class="col-7 xt-white  h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <p class="f-p h1 tx-thi">${series.name.split("#")[0]}</p>
+                    ${series.summary}
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="f-s text-white m-0 fw-bold fst-italic">${series.type.toLocaleDateString("it-IT")}</p>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="f-p tx-acc lead"> 5€ </p>
+                      <button class="btn">
+                        <i class="bi bi-arrow-right-circle-fill fs-1 tx-acc"></i>
+                      </button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          `
+          upcomingBooksWrapper.append(div)
+          
+        })
+      })
+      
+      
+      let swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+      
+      
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </script>
+  </body>
+  </html>
